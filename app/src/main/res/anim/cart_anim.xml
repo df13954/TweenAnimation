@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--toXScale 放大-->
+    <!--duration 持续时间-->
+    <set>
+        <!--scale 排在前面的先执行-->
+        <!--第一次进行基于图片中心的，1.5倍方法，持续0.3s-->
+        <scale
+            android:duration="300"
+            android:fromXScale="1.0"
+            android:fromYScale="1.0"
+            android:pivotX="50.0%"
+            android:pivotY="50.0%"
+            android:toXScale="1.5"
+            android:toYScale="1.5" />
+
+        <!--第二次，从放大后的1.5倍，基于中心 缩小到原来的大小 持续03s-->
+
+        <!--startOffset[long] 	动画之间的时间间隔，从上次动画停多少时间开始执行下个动画-->
+        <scale
+            android:duration="300"
+            android:fromXScale="1.5"
+            android:fromYScale="1.5"
+            android:pivotX="50.0%"
+            android:pivotY="50.0%"
+            android:startOffset="300"
+            android:toXScale="1.0"
+            android:toYScale="1.0" />
+
+    </set>
+    <!--toXDelta 动画最后的去的位置   x轴方向  屏幕的左边-100% ;屏幕的中央0，屏幕的右边100%-->
+    <!--toYDelta  y轴上   屏幕的底部，是+ 100% ;屏幕的中央0; 屏幕的顶部是 负 -100% -->
+    <set>
+
+        <!--移动 -->
+        <translate
+            android:duration="700"
+            android:fromXDelta="0.0"
+            android:fromYDelta="0.0"
+            android:startOffset="500"
+            android:toXDelta="85.0%p"
+            android:toYDelta="90%p" />
+
+        <!--渐变  ，fromAlpha ：刚刚开始的时候的透明度-->
+        <alpha
+            android:duration="700"
+            android:fromAlpha="1.0"
+            android:startOffset="500"
+            android:toAlpha="0.1" />
+        <scale
+            android:duration="700"
+            android:fromXScale="1.0"
+            android:fromYScale="1.0"
+            android:pivotX="50.0%"
+            android:pivotY="50.0%"
+            android:startOffset="500"
+            android:toXScale="0.5"
+            android:toYScale="0.5" />
+
+    </set>
+
+</set>
