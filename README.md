@@ -12,7 +12,7 @@ private void initAnim() {
 
             @Override
             public void onAnimationStart(Animation animation) {
-                img.setVisibility(View.VISIBLE);
+                target.setVisibility(View.VISIBLE);
             }
 
             @Override
@@ -25,7 +25,7 @@ private void initAnim() {
                 //动画结束的时候
                 //商品数据+1
                 //完成之后，这个 车 图片，隐藏
-                img.setVisibility(View.GONE);
+                target.setVisibility(View.GONE);
             }
         });
     }
